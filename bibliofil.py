@@ -16,7 +16,7 @@ with open("./imgStyles.css") as styles:
 @st.cache_data
 def get_data():
 
-    df = pd.read_csv("D:/gokce gok/My Articles & Projects/Book Recommender via Images/philosophy-books-data-tr-processed.csv")
+    df = pd.read_csv("dataset/philosophy-books-data-tr-processed.csv")
     df["number_of_purchasers"] = df["number_of_purchasers"].astype("int")
     min_max = MinMaxScaler()
     df["number_of_purchasers"] = min_max.fit_transform(df[["number_of_purchasers"]])
