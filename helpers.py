@@ -15,6 +15,7 @@ import ocrspace
 import pandas as pd
 import warnings
 
+
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_colwidth", 200)
 pd.set_option("display.expand_frame_repr", False)
@@ -29,7 +30,7 @@ ACCENT_TRANSFORM = {"Î": "İ", "î": "i", "İ": "i", "â": "a",
 
 # Turkish Lemmas
 turkish_lemmas_path = "dataset/tr-lemmas.txt"
-with open(turkish_lemmas_path, "r") as file:
+with open(turkish_lemmas_path, "r", encoding='latin-1') as file:
     revisedDict = eval(file.read())
 
 # Stop Words
@@ -41,8 +42,6 @@ STOP_WORDS = [word.strip("\n") for word in tr_stop_words]
 
 
 # %% FUNCTIONS
-
-
 def preprocess_names(string):
     
     """
