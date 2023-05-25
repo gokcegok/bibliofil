@@ -7,9 +7,9 @@ from helpers import recommend_newData, image2text
 import re
 
 st.set_page_config(layout="wide")
-image = Image.open("D:/gokce gok/My Articles & Projects/Book Recommender via Images/sunum/rahibe-teresa2.jpg")
+image = Image.open("rahibe-teresa2.jpg")
 
-with open("./imgStyles.css") as styles:
+with open("imgStyles.css") as styles:
     design = styles.read()
 
 
