@@ -112,16 +112,6 @@ def preprocess_words(string):
     string : modified description
 
     """
-
-    # Turkish Lemmas
-    with open("dataset/tr-lemmas.txt", "r") as file:
-        revisedDict = eval(file.read())
-
-    # STOP WORDS
-    with open('dataset/ahmetax-tr-stopwords-v2.txt', 'r', encoding="utf-8") as file:
-        tr_stop_words = file.readlines()
-        
-    STOP_WORDS = [word.strip("\n") for word in tr_stop_words]
     
     ad = AlphabetDetector()  # for handling non-latin alphabets
     if ad.is_latin(string) == True:
