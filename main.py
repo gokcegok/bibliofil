@@ -9,7 +9,7 @@ import re
 st.set_page_config(layout="wide")
 image = Image.open("rahibe-teresa2.jpg")
 
-with open("imgStyles.css") as styles:
+with open("webFiles/imgStyles.css") as styles:
     design = styles.read()
 
 
@@ -46,7 +46,7 @@ def books(tab, data):
                     <style>
                     {design}
                     </style>
-                    <img class="bookMaxi" src={data[(data["author"] == selected_author) &
+                    <img class="bookMini" src={data[(data["author"] == selected_author) &
                                                     (data["name"] == selected_book)]["image_link"].values[0] 
                                                 }> 
                     </div>
