@@ -237,7 +237,7 @@ def recommend_newData(dataset, search):
     """
     
     info = dataset["all_info"]
-    info = info.append(pd.Series(preprocess_names(search)), 
+    info = info._append(pd.Series(preprocess_names(search)), 
                        ignore_index=True)
     book_index = len(info) - 1    
     recommendation_indices = recommend(dataset, book_index, info)
@@ -265,7 +265,7 @@ def recommend_aboutAuthor(dataset, search):
     dataset = dataset.drop(indexAuthor)
     
     info = dataset["all_info"]
-    info = info.append(pd.Series(preprocess_names(search)), 
+    info = info._append(pd.Series(preprocess_names(search)), 
                        ignore_index=True)
     book_index = len(info) - 1    
     
