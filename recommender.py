@@ -18,7 +18,7 @@ warnings.filterwarnings("ignore")
 
 # %% Dataset
 
-df_path = "./philosophy-books-data-tr-processed.csv"
+df_path = "dataset/philosophy-books-data-tr-processed.csv"
 df = pd.read_csv(df_path)
 
 # %% Recommendation
@@ -73,9 +73,8 @@ while True:
                 recommendation_indices = recommend_newData(data, search)
                 recommendations = data.iloc[recommendation_indices]
                 break
-            
-            
-                
+ 
+
             elif selection == 3:
                 
                 # books of the author
