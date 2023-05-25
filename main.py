@@ -7,7 +7,7 @@ from helpers import recommend_newData, image2text
 import re
 
 st.set_page_config(layout="wide")
-image = Image.open("rahibe-teresa2.jpg")
+image = Image.open("webFiles/rahibe-teresa2.jpg")
 
 with open("webFiles/imgStyles.css") as styles:
     design = styles.read()
