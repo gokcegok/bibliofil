@@ -46,14 +46,14 @@ def books(tab, data):
                     <style>
                     {design}
                     </style>
-                    <img class="bookMini" src={data[(data["author"] == selected_author) &
+                    <img class="bookMaxi" src={data[(data["author"] == selected_author) &
                                                     (data["name"] == selected_book)]["image_link"].values[0] 
                                                 }> 
                     </div>
                     """)
 
-    col2.markdown("**" + str(data[(data["author"] == selected_author) &
-                             (data["name"] == selected_book)]["description"].values[0]) + "**")
+    col2.markdown(str(data[(data["author"] == selected_author) &
+                             (data["name"] == selected_book)]["description"].values[0]))
 
 
 def get_results(data, recommendation_indices, tab, start=0):
@@ -87,7 +87,7 @@ def recommender(tab, data):
     col1, col2 = tab.columns([2, 5])
 
     col11, col12 = col1.columns([5, 1])
-    uploaded_file = col11.file_uploader("**Görüntü:**", accept_multiple_files=False)
+    uploaded_file = col11.file_uploader("**Görüntü:**" + "\n" + "\n*kitap kapağı ya da iç sayfasıyla arama yapabilirsiniz*", accept_multiple_files=False)
     if uploaded_file is not None:
 
         search = image2text(uploaded_file)
@@ -95,7 +95,7 @@ def recommender(tab, data):
         get_results(data, recommendation_indices, col2)
 
     col11, col12 = col1.columns([5, 3])
-    search = col11.text_input("")
+    search = col11.text_input("", "url:görüntü")
     col12.write("")
     col12.write("")
     if col12.button(':camera_with_flash:'):
@@ -103,7 +103,7 @@ def recommender(tab, data):
         recommendation_indices = recommend_newData(data, search)
         get_results(data, recommendation_indices, col2)
 
-    search = col11.text_input("**Anahtar Kelime:**")
+    search = col11.text_input("**Anahtar Kelime:**", "stoacılık")
     col12.write("")
     col12.write("")
     if col12.button(':female-detective: :male-detective:'):
@@ -126,6 +126,7 @@ def recommender(tab, data):
         get_results(data, recommendation_indices, col2, 1)
 
     author = data["author"].unique()
+
     selected_author = col11.selectbox(label="**Yazar Adı:**", options=author)
     about = col11.checkbox('ilişkili')
 
