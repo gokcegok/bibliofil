@@ -1,0 +1,7 @@
+streamlit
+PIL
+pandas
+sklearn
+scikit-learn
+alphabet_detector
+ocrspace
