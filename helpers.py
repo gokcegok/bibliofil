@@ -28,12 +28,12 @@ ACCENT_TRANSFORM = {"Î": "İ", "î": "i", "İ": "i", "â": "a",
                     "Â": "A", "Û": "U", "û": "u"}
 
 # Turkish Lemmas
-turkish_lemmas_path = "./stop-words/tr-lemmas.txt"
+turkish_lemmas_path = "dataset/tr-lemmas.txt"
 with open(turkish_lemmas_path, "r") as file:
     revisedDict = eval(file.read())
 
 # Stop Words
-stop_words_path = './stop-words/ahmetax-tr-stopwords-v2.txt'
+stop_words_path = 'dataset/ahmetax-tr-stopwords-v2.txt'
 with open(stop_words_path, 'r', encoding="utf-8") as file:
     tr_stop_words = file.readlines()
     
@@ -114,11 +114,11 @@ def preprocess_words(string):
     """
 
     # Turkish Lemmas
-    with open("./stop-words/tr-lemmas.txt", "r") as file:
+    with open("dataset/tr-lemmas.txt", "r") as file:
         revisedDict = eval(file.read())
 
     # STOP WORDS
-    with open('./stop-words/ahmetax-tr-stopwords-v2.txt', 'r', encoding="utf-8") as file:
+    with open('dataset/ahmetax-tr-stopwords-v2.txt', 'r', encoding="utf-8") as file:
         tr_stop_words = file.readlines()
         
     STOP_WORDS = [word.strip("\n") for word in tr_stop_words]
