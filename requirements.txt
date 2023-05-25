@@ -1,7 +1,6 @@
 streamlit
-PIL
+Pillow
 pandas
-sklearn
 scikit-learn
 alphabet_detector
 ocrspace
