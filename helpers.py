@@ -197,10 +197,10 @@ def recommend(dataset, var_index, serie=pd.Series()):
     recommendations["result"] = recommendations["score"]*0.7 + \
                                 recommendations["num_of_purchasers"]*0.3
                                 
-    # The index of the 10 books with the highest "result" score        
-    mix_top8 = recommendations.sort_values("result", ascending=False)[0:10].index
+    # The index of the 6 books with the highest "result" score        
+    mix_top6 = recommendations.sort_values("result", ascending=False)[0:6].index
      
-    return mix_top8
+    return mix_top6
 
 
 def recommend_fromData(dataset, search):
