@@ -46,7 +46,7 @@ def books(tab, data):
                     <style>
                     {design}
                     </style>
-                    <img class="bookMaxi" src={data[(data["author"] == selected_author) &
+                    <img class="bookMini" src={data[(data["author"] == selected_author) &
                                                     (data["name"] == selected_book)]["image_link"].values[0] 
                                                 }> 
                     </div>
