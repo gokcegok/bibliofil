@@ -128,8 +128,7 @@ def recommender(tab, data):
     author = data["author"].unique()
 
     selected_author = col11.selectbox(label="**Yazar Adı:**", options=author)
-    col11.write("\n*yazarla ilişkili olabilecek kitaplar için:\n*")
-    about = col11.checkbox('ilişkili')
+    about = col11.checkbox('yazarla ilişkili')
 
     if about:
 
