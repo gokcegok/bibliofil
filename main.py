@@ -95,7 +95,7 @@ def recommender(tab, data):
         get_results(data, recommendation_indices, col2)
 
     col11, col12 = col1.columns([5, 3])
-    search = col11.text_input("", "url:görüntü")
+    search = col11.text_input("", ":görüntü adresi")
     col12.write("")
     col12.write("")
     if col12.button(':camera_with_flash:'):
@@ -103,7 +103,7 @@ def recommender(tab, data):
         recommendation_indices = recommend_newData(data, search)
         get_results(data, recommendation_indices, col2)
 
-    search = col11.text_input("**Anahtar Kelime:**", "stoacılık")
+    search = col11.text_input("**Anahtar Kelime:**", ":stoacılık")
     col12.write("")
     col12.write("")
     if col12.button(':female-detective: :male-detective:'):
@@ -128,6 +128,7 @@ def recommender(tab, data):
     author = data["author"].unique()
 
     selected_author = col11.selectbox(label="**Yazar Adı:**", options=author)
+    col11.write("\n*yazarla ilişkili olabilecek kitaplar için:\n*")
     about = col11.checkbox('ilişkili')
 
     if about:
